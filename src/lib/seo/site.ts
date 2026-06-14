@@ -1,5 +1,5 @@
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://eroll.dev";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://erollmaxhun.com";
 
 export const siteConfig = {
   name: "Eroll Maxhuni",
@@ -12,7 +12,7 @@ export const siteConfig = {
   url: siteUrl,
   locale: "en_US",
   language: "en",
-  email: "hello@eroll.dev",
+  email: "info@erollmaxhuni.com",
   jobTitle: "Full Stack Developer",
   keywords: [
     "Full Stack Developer",
@@ -34,8 +34,8 @@ export const siteConfig = {
     "Freelance Developer",
   ],
   sameAs: [
-    "https://github.com/erollmaxhuni",
-    "https://linkedin.com/in/erollmaxhuni",
+    "https://github.com/341",
+    "https://www.linkedin.com/in/eroll-maxhuni/",
   ],
   knowsAbout: [
     "React",

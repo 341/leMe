@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/seo/site";
 
 const navLinks = [
   { href: "#architecture", label: "Architecture" },
@@ -54,7 +55,7 @@ export function Header() {
         </ul>
 
         <a
-          href="mailto:hello@eroll.dev"
+          href={`mailto:${siteConfig.email}`}
           className="rounded-full border border-aurora-violet/30 bg-aurora-violet/10 px-4 py-2 font-mono text-xs text-aurora-violet transition-colors hover:bg-aurora-violet/20"
         >
           Hire Me
