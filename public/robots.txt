@@ -4,7 +4,6 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Host: https://erollmaxhuni.com
 Sitemap: https://erollmaxhuni.com/sitemap.xml
 
 # AI / LLM context files
