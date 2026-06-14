@@ -4,8 +4,6 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://erollmaxhuni.com/sitemap.xml
-
 # AI / LLM context files
 # llm.txt: https://erollmaxhuni.com/llm.txt
 # llms.txt: https://erollmaxhuni.com/llms.txt
