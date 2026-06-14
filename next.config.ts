@@ -1,65 +1,20 @@
 import type { NextConfig } from "next";
+import { performanceHeaders } from "./src/lib/performance/cache-headers";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  /** Enable gzip compression on the Node.js server (YSlow #3). */
+  compress: true,
   images: {
     formats: ["image/avif", "image/webp"],
   },
   experimental: {
-    optimizePackageImports: ["framer-motion"],
+    /** Tree-shake large packages to reduce JS payload (YSlow #2). */
+    optimizePackageImports: ["framer-motion", "matter-js"],
   },
   async headers() {
-    return [
-      {
-        source: "/sitemap.xml",
-        headers: [
-          {
-            key: "Content-Type",
-            value: "application/xml; charset=utf-8",
-          },
-          {
-            key: "Cache-Control",
-            value: "public, max-age=3600, must-revalidate",
-          },
-        ],
-      },
-      {
-        source: "/robots.txt",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=3600, must-revalidate",
-          },
-        ],
-      },
-      {
-        source: "/llm.txt",
-        headers: [
-          {
-            key: "Content-Type",
-            value: "text/plain; charset=utf-8",
-          },
-          {
-            key: "Cache-Control",
-            value: "public, max-age=86400, must-revalidate",
-          },
-        ],
-      },
-      {
-        source: "/llms.txt",
-        headers: [
-          {
-            key: "Content-Type",
-            value: "text/plain; charset=utf-8",
-          },
-          {
-            key: "Cache-Control",
-            value: "public, max-age=86400, must-revalidate",
-          },
-        ],
-      },
-    ];
+    return [...performanceHeaders];
   },
 };
 
