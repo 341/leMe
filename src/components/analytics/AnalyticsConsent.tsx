@@ -66,7 +66,11 @@ export function AnalyticsConsent() {
               >
                 This site uses Google Analytics to understand traffic and improve
                 the portfolio experience. Analytics cookies are only loaded if you
-                accept. You can change your choice anytime via Cookie settings.
+                accept. Read the{" "}
+                <a href="/privacy" className="text-aurora-cyan hover:underline">
+                  Privacy Policy
+                </a>
+                . You can change your choice anytime via Cookie settings.
               </p>
             </div>
 

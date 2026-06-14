@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/lib/seo/site";
 import { CookieSettingsButton } from "@/components/analytics/CookieSettingsButton";
 
@@ -59,8 +60,14 @@ export function Footer() {
           <p className="font-mono text-xs text-ink-muted">
             © {new Date().getFullYear()} {siteConfig.name}. Built with Next.js.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <CookieSettingsButton />
+            <Link
+              href="/privacy"
+              className="font-mono text-xs uppercase tracking-wider text-ink-muted transition-colors hover:text-ink-primary"
+            >
+              Privacy
+            </Link>
             <p className="font-mono text-xs text-ink-muted">
               React · TypeScript · Node.js · AWS
             </p>

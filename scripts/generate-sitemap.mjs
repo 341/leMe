@@ -8,6 +8,7 @@ const siteUrl = (
 
 const routes = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/privacy", changefreq: "monthly", priority: "0.6" },
   { path: "/llms.txt", changefreq: "monthly", priority: "0.9" },
   { path: "/robots.txt", changefreq: "monthly", priority: "0.9" },
   { path: "/llm.txt", changefreq: "monthly", priority: "0.8" },
