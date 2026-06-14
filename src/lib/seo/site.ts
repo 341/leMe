@@ -1,5 +1,5 @@
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://erollmaxhun.com";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://erollmaxhuni.com";
 
 export const siteConfig = {
   name: "Eroll Maxhuni",

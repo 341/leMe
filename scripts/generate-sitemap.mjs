@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://erollmaxhun.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://erollmaxhuni.com"
 ).replace(/\/$/, "");
 
 const routes = [
