@@ -71,6 +71,9 @@ export const homeMetadata: Metadata = {
   description: siteConfig.description,
   alternates: {
     canonical: "/",
+    types: {
+      "application/amp+html": "/amp",
+    },
   },
   openGraph: {
     title: siteConfig.title,

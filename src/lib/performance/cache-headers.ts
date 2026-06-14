@@ -42,6 +42,14 @@ export const performanceHeaders = [
     headers: [{ key: "Cache-Control", value: cacheControl.html }],
   },
   {
+    source: "/amp",
+    headers: [{ key: "Cache-Control", value: cacheControl.html }],
+  },
+  {
+    source: "/amp/privacy",
+    headers: [{ key: "Cache-Control", value: cacheControl.html }],
+  },
+  {
     source: "/sitemap.xml",
     headers: [
       { key: "Content-Type", value: "application/xml; charset=utf-8" },

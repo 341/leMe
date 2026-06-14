@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     "Privacy policy for erollmaxhuni.com — cookies, Google Analytics, and your data protection rights.",
   alternates: {
     canonical: "/privacy",
+    types: {
+      "application/amp+html": "/amp/privacy",
+    },
   },
   robots: {
     index: true,
