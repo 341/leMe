@@ -1,6 +1,30 @@
 import { caseStudies } from "@/lib/data/case-studies";
 import { absoluteUrl, siteConfig } from "@/lib/seo/site";
 
+export function getPersonSchema() {
+  const pageUrl = absoluteUrl("/");
+
+  return {
+    "@type": "Person" as const,
+    "@id": `${pageUrl}#person`,
+    name: siteConfig.name,
+    url: pageUrl,
+    jobTitle: siteConfig.jobTitle,
+    email: siteConfig.email,
+    description: siteConfig.description,
+    knowsAbout: siteConfig.knowsAbout,
+    sameAs: siteConfig.sameAs,
+    image: absoluteUrl("/opengraph-image"),
+  };
+}
+
+export function buildPersonJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    ...getPersonSchema(),
+  };
+}
+
 export function buildHomeJsonLd() {
   const pageUrl = absoluteUrl("/");
 
@@ -39,18 +63,7 @@ export function buildHomeJsonLd() {
         mainEntity: { "@id": `${pageUrl}#person` },
         inLanguage: siteConfig.language,
       },
-      {
-        "@type": "Person",
-        "@id": `${pageUrl}#person`,
-        name: siteConfig.name,
-        url: pageUrl,
-        email: siteConfig.email,
-        jobTitle: siteConfig.jobTitle,
-        description: siteConfig.description,
-        knowsAbout: siteConfig.knowsAbout,
-        sameAs: siteConfig.sameAs,
-        image: absoluteUrl("/opengraph-image"),
-      },
+      getPersonSchema(),
       {
         "@type": "ProfessionalService",
         "@id": `${pageUrl}#service`,

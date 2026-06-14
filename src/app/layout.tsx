@@ -3,6 +3,8 @@ import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildPersonJsonLd } from "@/lib/seo/json-ld";
 import { rootMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
 
@@ -41,11 +43,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const personJsonLd = buildPersonJsonLd();
+
   return (
     <html
       lang={rootMetadata.openGraph?.locale?.split("_")[0] ?? "en"}
       className={`${syne.variable} ${dmSans.variable} ${jetbrains.variable}`}
     >
+      <head>
+        <JsonLd data={personJsonLd} />
+      </head>
       <body>
         <SkipLink />
         <Header />
