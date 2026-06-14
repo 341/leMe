@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.9",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "matter-js": "^0.20.0",

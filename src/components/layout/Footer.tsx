@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/seo/site";
+import { CookieSettingsButton } from "@/components/analytics/CookieSettingsButton";
 
 const socialLinks = [
   { label: "GitHub", href: siteConfig.sameAs[0] },
@@ -58,9 +59,12 @@ export function Footer() {
           <p className="font-mono text-xs text-ink-muted">
             © {new Date().getFullYear()} {siteConfig.name}. Built with Next.js.
           </p>
-          <p className="font-mono text-xs text-ink-muted">
-            React · TypeScript · Node.js · AWS
-          </p>
+          <div className="flex items-center gap-4">
+            <CookieSettingsButton />
+            <p className="font-mono text-xs text-ink-muted">
+              React · TypeScript · Node.js · AWS
+            </p>
+          </div>
         </div>
       </div>
     </footer>
