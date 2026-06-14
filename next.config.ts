@@ -13,6 +13,15 @@ const nextConfig: NextConfig = {
     /** Tree-shake large packages to reduce JS payload (YSlow #2). */
     optimizePackageImports: ["framer-motion", "matter-js"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/security.txt",
+        destination: "/.well-known/security.txt",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [...performanceHeaders];
   },

@@ -66,4 +66,11 @@ export const performanceHeaders = [
       { key: "Cache-Control", value: cacheControl.daily },
     ],
   },
+  {
+    source: "/.well-known/security.txt",
+    headers: [
+      { key: "Content-Type", value: "text/plain; charset=utf-8" },
+      { key: "Cache-Control", value: cacheControl.daily },
+    ],
+  },
 ] ;

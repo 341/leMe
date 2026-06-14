@@ -10,3 +10,6 @@ Sitemap: https://erollmaxhuni.com/sitemap.xml
 # AI / LLM context files
 # llm.txt: https://erollmaxhuni.com/llm.txt
 # llms.txt: https://erollmaxhuni.com/llms.txt
+
+# Security contact (RFC 9116)
+# security.txt: https://erollmaxhuni.com/.well-known/security.txt

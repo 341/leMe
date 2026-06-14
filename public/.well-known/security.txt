@@ -1,0 +1,10 @@
+Contact: mailto:info@erollmaxhuni.com
+Contact: https://www.linkedin.com/in/eroll-maxhuni/
+Expires: 2027-06-14T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://erollmaxhuni.com/.well-known/security.txt
+Policy: https://erollmaxhuni.com/llm.txt
+
+# Security vulnerability reports for erollmaxhuni.com
+# Please email details to info@erollmaxhuni.com with steps to reproduce.
+# Allow up to 5 business days for an initial response.
