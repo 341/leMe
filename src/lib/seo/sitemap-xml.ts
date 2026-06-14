@@ -2,9 +2,10 @@ import { absoluteUrl, siteConfig } from "@/lib/seo/site";
 
 const routes = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
-  { path: "/llms.txt", changefreq: "monthly", priority: "0.8" },
-  { path: "/llm.txt", changefreq: "monthly", priority: "0.7" },
-  { path: "/.well-known/security.txt", changefreq: "monthly", priority: "0.5" },
+  { path: "/llms.txt", changefreq: "monthly", priority: "0.9" },
+  { path: "/robots.txt", changefreq: "monthly", priority: "0.9" },
+  { path: "/llm.txt", changefreq: "monthly", priority: "0.8" },
+  { path: "/.well-known/security.txt", changefreq: "monthly", priority: "0.7" },
 ] as const;
 
 export function buildSitemapXml(lastModified = new Date()): string {
