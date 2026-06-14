@@ -1,50 +1,25 @@
 # Eroll Maxhuni
 
-> Senior Full Stack Developer with 13 years of enterprise and freelance experience. Expert in React, TypeScript, Node.js, Angular, Next.js, NestJS, AWS microservices, PostgreSQL, and distributed systems architecture.
+> Senior Full Stack Developer — 13 years enterprise experience. React, TypeScript, Node.js, NestJS, AWS, WebRTC, Expo. Available for remote senior roles and consulting worldwide.
 
-Eroll Maxhuni architects enterprise-grade web and mobile applications — from real-time logistics platforms to secure WebRTC systems. Available for senior full-stack roles, architecture consulting, and high-impact freelance engagements worldwide.
-
-Primary site: https://erollmaxhuni.com
-Email: info@erollmaxhuni.com
-GitHub: https://github.com/341
-LinkedIn: https://www.linkedin.com/in/eroll-maxhuni/
+Plain-language AI profile with full tech stack, case studies, and contact details: https://erollmaxhuni.com/llm.txt
 
 ## Contact
 
-- [Email](mailto:info@erollmaxhuni.com): info@erollmaxhuni.com — hiring and project inquiries
-- [LinkedIn](https://www.linkedin.com/in/eroll-maxhuni/): Professional profile and experience
-- [GitHub](https://github.com/341): Open source and project repositories
-- [Contact section](https://erollmaxhuni.com/#contact): Portfolio contact footer
+- [Email](mailto:info@erollmaxhuni.com): Preferred contact for hiring and projects — info@erollmaxhuni.com
+- [LinkedIn](https://www.linkedin.com/in/eroll-maxhuni/): Professional profile
+- [GitHub](https://github.com/341): Code and repositories
+- [Full AI profile (llm.txt)](https://erollmaxhuni.com/llm.txt): Complete prose summary for LLM indexing
 
-## Key Pages
+## Key pages
 
-- [Home](https://erollmaxhuni.com/): Portfolio homepage with interactive physics hero and professional overview
-- [Backend Architecture](https://erollmaxhuni.com/#architecture): AWS microservices diagram — Lambda, API Gateway, S3, Prisma, PostgreSQL, Docker
-- [Case Studies](https://erollmaxhuni.com/#case-studies): Enterprise delivery highlights across logistics, ILMS, and secure communications
-- [Tech Stack](https://erollmaxhuni.com/#tech-stack): Full technology ecosystem — React, Angular, Node.js, PHP legacy, databases, DevOps
-
-## Services
-
-- [Full Stack Development](https://erollmaxhuni.com/): React, Next.js, Angular, TypeScript, Node.js, NestJS applications
-- [Cloud & Microservices](https://erollmaxhuni.com/#architecture): AWS Lambda, API Gateway, S3, event-driven architecture, Docker
-- [Mobile Development](https://erollmaxhuni.com/#case-studies): Expo and React Native delivery and driver platforms
-- [Real-Time Systems](https://erollmaxhuni.com/#case-studies): WebRTC, WebSockets, secure peer-to-peer data channels
-
-## Case Studies
-
-- [Expo Delivery & Driver Platform](https://erollmaxhuni.com/#case-studies): Real-time fleet coordination for 2,000+ drivers — Expo, NestJS, AWS Lambda, PostgreSQL
-- [React Web Components in Angular](https://erollmaxhuni.com/#case-studies): Cross-framework ILMS integration — 12 production widgets, WCAG 2.1 AA
-- [WebRTC Data Management Platform](https://erollmaxhuni.com/#case-studies): End-to-end encrypted healthcare data sync — NestJS, AWS, sub-200ms P2P latency
-
-## Technologies
-
-- [Frontend](https://erollmaxhuni.com/#tech-stack): React, Next.js, Angular, TypeScript, Expo, Redux, Redux Saga
-- [Backend](https://erollmaxhuni.com/#tech-stack): Node.js, NestJS, Prisma, PHP (Laravel, Symfony, WordPress)
-- [Data & Cloud](https://erollmaxhuni.com/#tech-stack): PostgreSQL, MySQL, MSSQL, AWS, Docker, WebRTC
+- [Home](https://erollmaxhuni.com/): Portfolio and overview
+- [Case studies](https://erollmaxhuni.com/#case-studies): Expo logistics, Angular Web Components, WebRTC healthcare
+- [Tech stack](https://erollmaxhuni.com/#tech-stack): Full technology ecosystem
+- [Architecture](https://erollmaxhuni.com/#architecture): AWS microservices diagram
 
 ## Optional
 
-- [Sitemap](https://erollmaxhuni.com/sitemap.xml): XML sitemap for search engines
+- [Sitemap](https://erollmaxhuni.com/sitemap.xml): XML sitemap
 - [Robots](https://erollmaxhuni.com/robots.txt): Crawler directives
-- [Web App Manifest](https://erollmaxhuni.com/manifest.webmanifest): PWA metadata
-- [Source Repository](https://github.com/341/leMe): Next.js portfolio source code on GitHub
+- [Source code](https://github.com/341/leMe): Portfolio repository on GitHub

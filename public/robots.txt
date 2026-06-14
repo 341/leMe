@@ -1,0 +1,12 @@
+# https://erollmaxhuni.com/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Host: https://erollmaxhuni.com
+Sitemap: https://erollmaxhuni.com/sitemap.xml
+
+# AI / LLM context files
+# llm.txt: https://erollmaxhuni.com/llm.txt
+# llms.txt: https://erollmaxhuni.com/llms.txt

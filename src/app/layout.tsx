@@ -51,6 +51,8 @@ export default function RootLayout({
       className={`${syne.variable} ${dmSans.variable} ${jetbrains.variable}`}
     >
       <head>
+        <link rel="llm" href="/llm.txt" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
         <JsonLd data={personJsonLd} />
       </head>
       <body>

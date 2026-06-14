@@ -64,9 +64,6 @@ export const rootMetadata: Metadata = {
     address: false,
     telephone: false,
   },
-  other: {
-    "geo.region": "US",
-  },
 };
 
 export const homeMetadata: Metadata = {
