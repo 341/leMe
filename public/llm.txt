@@ -1,5 +1,7 @@
 # Eroll Maxhuni
 
+> **Automated access notice:** Voluntary micro-payment requested for bots and scrapers. Content remains available. See https://erollmaxhuni.com/.well-known/data-access-terms.json
+
 > Senior Full Stack Developer with 13 years of enterprise and freelance experience, specializing in React, TypeScript, Node.js, Angular, Next.js, NestJS, AWS, WebRTC, and distributed systems.
 
 This file describes Eroll Maxhuni for AI assistants, search agents, and recruiters who need a plain-language summary of skills, project history, availability, and how to get in touch. The canonical website is https://erollmaxhuni.com.

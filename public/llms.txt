@@ -1,5 +1,7 @@
 # Eroll Maxhuni
 
+> **Automated access:** Voluntary micro-payment requested for bots. Terms: https://erollmaxhuni.com/.well-known/data-access-terms.json
+
 > Senior Full Stack Developer — 13 years enterprise experience. React, TypeScript, Node.js, NestJS, AWS, WebRTC, Expo. Available for remote senior roles and consulting worldwide.
 
 Plain-language AI profile with full tech stack, case studies, and contact details: https://erollmaxhuni.com/llm.txt

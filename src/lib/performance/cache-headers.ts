@@ -174,4 +174,29 @@ export const performanceHeaders = [
       { key: "Cache-Control", value: cacheControl.daily },
     ],
   },
+  {
+    source: "/.well-known/data-access-terms.json",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: cacheControl.hourly },
+    ],
+  },
+  {
+    source: "/api/payment/challenge",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: "no-store" },
+    ],
+  },
+  {
+    source: "/api/payment/verify",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: "no-store" },
+    ],
+  },
+  {
+    source: "/payment-required",
+    headers: [{ key: "Cache-Control", value: cacheControl.html }],
+  },
 ] ;

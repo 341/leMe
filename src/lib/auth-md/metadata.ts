@@ -1,4 +1,6 @@
 import { absoluteUrl, siteConfig } from "@/lib/seo/site";
+import { buildPaymentRequiredBody } from "@/lib/payment/challenge";
+import { paymentConfig } from "@/lib/payment/config";
 
 const issuer = () => siteConfig.url.replace(/\/$/, "");
 
@@ -34,6 +36,7 @@ export function buildOAuthAuthorizationServerMetadata() {
       skill: absoluteUrl("/auth.md"),
       register_uri: absoluteUrl("/agent/auth"),
       claim_uri: absoluteUrl("/agent/auth/claim"),
+      payment_uri: absoluteUrl("/.well-known/data-access-terms.json"),
       identity_types_supported: ["anonymous"],
       anonymous: {
         credential_types_supported: ["access_token"],
@@ -62,12 +65,27 @@ export const publicAgentResources = [
 ] as const;
 
 export function buildPublicAccessRegistrationResponse() {
+  const payment = buildPaymentRequiredBody();
+  const enforced = paymentConfig.enforced;
+
   return {
     type: "anonymous",
-    message:
-      "No OAuth registration is required. This portfolio is publicly readable.",
-    credential_required: false,
-    scopes_granted: [...authMdScopes],
+    message: enforced
+      ? "Automated access requires a verified micro-payment. Human browsers are exempt."
+      : "Public read access is open. Voluntary micro-payments are requested from automated clients.",
+    credential_required: enforced,
+    payment_required: enforced,
+    payment_voluntary: !enforced,
+    enforcement_mode: paymentConfig.mode,
+    price_usd: paymentConfig.baseUsd,
+    session_hours: paymentConfig.sessionHours,
+    terms_url: payment.terms_url,
+    challenge_endpoint: payment.challenge_endpoint,
+    verify_endpoint: payment.verify_endpoint,
+    recommended_chains: payment.recommended_chains,
+    wallets: payment.wallets,
+    scopes_granted: enforced ? undefined : [...authMdScopes],
+    scopes_after_payment: enforced ? [...authMdScopes] : undefined,
     resources: [...publicAgentResources],
     contact: `mailto:${siteConfig.email}`,
   };

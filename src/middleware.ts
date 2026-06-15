@@ -1,19 +1,52 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { isPaymentAllowlisted } from "@/lib/payment/allowlist";
+import {
+  isAutomatedRequest,
+  requiresPayment,
+} from "@/lib/payment/bot-detector";
+import { buildPaymentRequiredResponse } from "@/lib/payment/challenge";
+import { paymentConfig } from "@/lib/payment/config";
 import { buildMarkdownForPath } from "@/lib/markdown/pages";
 import {
   buildMarkdownResponseHeaders,
   prefersMarkdown,
 } from "@/lib/markdown/negotiation";
 
-export function middleware(request: NextRequest) {
+function appendSoftPaymentNotice(response: NextResponse): void {
+  response.headers.set(
+    "X-Data-Access-Notice",
+    "optional-micro-payment-requested",
+  );
+  response.headers.append(
+    "Link",
+    '</.well-known/data-access-terms.json>; rel="payment"; type="application/json"',
+  );
+}
+
+export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  if (!isPaymentAllowlisted(pathname) && (await requiresPayment(request))) {
+    return buildPaymentRequiredResponse();
+  }
+
   const markdown = buildMarkdownForPath(pathname);
 
   if (markdown && prefersMarkdown(request.headers.get("accept"))) {
-    return new NextResponse(markdown, {
+    const markdownResponse = new NextResponse(markdown, {
       headers: buildMarkdownResponseHeaders(markdown),
     });
+
+    if (
+      paymentConfig.enabled &&
+      paymentConfig.mode === "soft" &&
+      (await isAutomatedRequest(request))
+    ) {
+      appendSoftPaymentNotice(markdownResponse);
+    }
+
+    return markdownResponse;
   }
 
   const response = NextResponse.next();
@@ -22,9 +55,19 @@ export function middleware(request: NextRequest) {
     response.headers.append("Vary", "Accept");
   }
 
+  if (
+    paymentConfig.enabled &&
+    paymentConfig.mode === "soft" &&
+    (await isAutomatedRequest(request))
+  ) {
+    appendSoftPaymentNotice(response);
+  }
+
   return response;
 }
 
 export const config = {
-  matcher: ["/", "/privacy"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|icon|apple-icon|opengraph-image).*)",
+  ],
 };

@@ -1,7 +1,9 @@
-# AI / LLM context
+# AI / LLM context — voluntary micro-payment requested for automated access
+# Terms: https://erollmaxhuni.com/.well-known/data-access-terms.json
 Allow: /llm.txt
 Allow: /llms.txt
 Allow: /.well-known/security.txt
+Allow: /.well-known/data-access-terms.json
 
 # ── Sitemap ───────────────────────────────────────────────────────
 Sitemap: https://erollmaxhuni.com/sitemap.xml
