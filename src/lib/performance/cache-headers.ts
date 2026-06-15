@@ -83,10 +83,73 @@ export const performanceHeaders = [
     ],
   },
   {
-    source: "/.well-known/api-catalog.json",
+    source: "/auth.md",
+    headers: [
+      { key: "Content-Type", value: "text/markdown; charset=utf-8" },
+      { key: "Cache-Control", value: cacheControl.daily },
+    ],
+  },
+  {
+    source: "/.well-known/oauth-protected-resource",
     headers: [
       { key: "Content-Type", value: "application/json; charset=utf-8" },
-      { key: "Cache-Control", value: cacheControl.daily },
+      { key: "Cache-Control", value: cacheControl.hourly },
+    ],
+  },
+  {
+    source: "/.well-known/oauth-authorization-server",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: cacheControl.hourly },
+    ],
+  },
+  {
+    source: "/.well-known/oauth/token",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: "no-store" },
+    ],
+  },
+  {
+    source: "/.well-known/api-catalog",
+    headers: [
+      {
+        key: "Content-Type",
+        value:
+          'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"',
+      },
+      { key: "Cache-Control", value: cacheControl.hourly },
+    ],
+  },
+  {
+    source: "/.well-known/health",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: "public, max-age=60, must-revalidate" },
+    ],
+  },
+  {
+    source: "/.well-known/mcp/server-card.json",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: cacheControl.hourly },
+    ],
+  },
+  {
+    source: "/mcp",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: "no-store" },
+    ],
+  },
+  {
+    source: "/.well-known/http-message-signatures-directory",
+    headers: [
+      {
+        key: "Content-Type",
+        value: "application/http-message-signatures-directory+json",
+      },
+      { key: "Cache-Control", value: cacheControl.hourly },
     ],
   },
 ] ;
