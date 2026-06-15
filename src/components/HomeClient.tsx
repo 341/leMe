@@ -32,12 +32,18 @@ const TechStackEcosystem = dynamic(
     ),
 );
 
+const StackMatcher = dynamic(
+  () =>
+    import("@/components/hire/StackMatcher").then((m) => m.StackMatcher),
+);
+
 export function HomeClient() {
   return (
     <>
       <PhysicsHero />
       <BackendShowcase />
       <TechStackEcosystem />
+      <StackMatcher />
     </>
   );
 }

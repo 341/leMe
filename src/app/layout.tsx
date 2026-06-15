@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { AnalyticsConsent } from "@/components/analytics/AnalyticsConsent";
+import { AvailabilityBanner } from "@/components/hire/AvailabilityBanner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -60,6 +61,7 @@ export default function RootLayout({
       <body>
         <SkipLink />
         <Header />
+        <AvailabilityBanner />
         <main id="main-content">{children}</main>
         <Footer />
         <AnalyticsConsent />

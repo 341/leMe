@@ -68,3 +68,7 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 ];
+
+export function getCaseStudyById(id: string): CaseStudy | undefined {
+  return caseStudies.find((study) => study.id === id);
+}

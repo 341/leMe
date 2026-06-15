@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BlogTeaser } from "@/components/blog/BlogTeaser";
 import { HomeClient } from "@/components/HomeClient";
 import { CaseStudies } from "@/components/case-studies/CaseStudies";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <JsonLd data={jsonLd} />
       <HomeClient />
       <CaseStudies />
+      <BlogTeaser />
     </>
   );
 }

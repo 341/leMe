@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { CaseStudy } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -123,6 +124,13 @@ export function CaseStudyCard({ study, index }: CaseStudyCardProps) {
               </span>
             ))}
           </div>
+
+          <Link
+            href={`/work/${study.id}`}
+            className="mt-6 inline-flex font-mono text-xs uppercase tracking-wider text-aurora-cyan hover:underline"
+          >
+            Read full case study →
+          </Link>
         </div>
       </details>
     </article>

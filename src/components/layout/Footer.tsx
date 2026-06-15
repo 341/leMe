@@ -63,6 +63,18 @@ export function Footer() {
           <div className="flex flex-wrap items-center gap-4">
             <CookieSettingsButton />
             <Link
+              href="/blog"
+              className="font-mono text-xs uppercase tracking-wider text-ink-muted transition-colors hover:text-ink-primary"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/work"
+              className="font-mono text-xs uppercase tracking-wider text-ink-muted transition-colors hover:text-ink-primary"
+            >
+              Work
+            </Link>
+            <Link
               href="/privacy"
               className="font-mono text-xs uppercase tracking-wider text-ink-muted transition-colors hover:text-ink-primary"
             >

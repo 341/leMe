@@ -6,8 +6,29 @@ const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://erollmaxhuni.com"
 ).replace(/\/$/, "");
 
+const blogSlugs = [
+  "agent-ready-portfolios",
+  "markdown-content-negotiation",
+  "event-driven-logistics",
+  "automating-developer-workflows",
+];
+
+const workSlugs = ["expo-delivery", "angular-wc", "webrtc-secure"];
+
 const routes = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/blog", changefreq: "weekly", priority: "0.85" },
+  { path: "/work", changefreq: "monthly", priority: "0.85" },
+  ...blogSlugs.map((slug) => ({
+    path: `/blog/${slug}`,
+    changefreq: "monthly",
+    priority: "0.75",
+  })),
+  ...workSlugs.map((slug) => ({
+    path: `/work/${slug}`,
+    changefreq: "monthly",
+    priority: "0.8",
+  })),
   { path: "/amp", changefreq: "weekly", priority: "0.8" },
   { path: "/amp/privacy", changefreq: "monthly", priority: "0.5" },
   { path: "/privacy", changefreq: "monthly", priority: "0.6" },
