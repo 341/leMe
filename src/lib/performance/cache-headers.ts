@@ -1,5 +1,7 @@
 /** Cache-Control values aligned with static asset fingerprinting and CDN best practices. */
 
+import { buildHomeLinkHeader } from "../seo/link-headers";
+
 export const cacheControl = {
   /** Hashed build assets (_next/static) — safe to cache indefinitely. */
   immutable: "public, max-age=31536000, immutable",
@@ -39,7 +41,10 @@ export const performanceHeaders = [
   },
   {
     source: "/",
-    headers: [{ key: "Cache-Control", value: cacheControl.html }],
+    headers: [
+      { key: "Cache-Control", value: cacheControl.html },
+      { key: "Link", value: buildHomeLinkHeader() },
+    ],
   },
   {
     source: "/amp",
@@ -74,6 +79,13 @@ export const performanceHeaders = [
     source: "/.well-known/security.txt",
     headers: [
       { key: "Content-Type", value: "text/plain; charset=utf-8" },
+      { key: "Cache-Control", value: cacheControl.daily },
+    ],
+  },
+  {
+    source: "/.well-known/api-catalog.json",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
       { key: "Cache-Control", value: cacheControl.daily },
     ],
   },
