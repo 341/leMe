@@ -131,7 +131,7 @@ This website (${siteConfig.url}) is operated by ${siteConfig.name}, a freelance 
 
 This portfolio is a static-first website. It does not offer user accounts, contact forms that store submissions on the server, or ecommerce checkout. When you visit, basic technical data (such as IP address, browser type, and pages viewed) may be processed by the hosting provider to deliver the site securely.
 
-If you accept analytics cookies, Google Analytics 4 (measurement ID \`G-T52WE3ZVWN\`) collects anonymised usage statistics such as pages visited, session duration, and approximate geography. Analytics scripts are **not loaded** unless you click "Accept analytics" in the cookie banner.
+If you accept analytics cookies, Google Tag (\`GT-NNS8SBK\`) collects anonymised usage statistics such as pages visited, session duration, and approximate geography. Analytics scripts are **not loaded** unless you click "Accept analytics" in the cookie banner.
 
 ## 3. Cookies and local storage
 

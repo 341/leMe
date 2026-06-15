@@ -20,7 +20,7 @@ export function buildAmpPrivacyDocument(): string {
 
     <h2>2. What this site collects</h2>
     <p>This portfolio does not store contact form submissions on the server. Hosting providers may process basic technical data to deliver the site securely.</p>
-    <p>Google Analytics 4 (G-T52WE3ZVWN) runs only after you accept analytics cookies on the full site.</p>
+    <p>Google Tag (GT-NNS8SBK) runs only after you accept analytics cookies on the full site.</p>
 
     <h2>3. Cookies and local storage</h2>
     <ul>

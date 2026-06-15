@@ -64,8 +64,8 @@ export default function PrivacyPolicyPage() {
             hosting provider to deliver the site securely.
           </p>
           <p className="mt-3">
-            If you accept analytics cookies, Google Analytics 4 (measurement ID{" "}
-            <span className="font-mono text-ink-primary">G-T52WE3ZVWN</span>)
+            If you accept analytics cookies, Google Tag (
+            <span className="font-mono text-ink-primary">GT-NNS8SBK</span>)
             collects anonymised usage statistics such as pages visited, session
             duration, and approximate geography. Analytics scripts are{" "}
             <strong className="text-ink-primary">not loaded</strong> unless you

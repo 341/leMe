@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { gaMeasurementId } from "@/lib/analytics/google-analytics";
+import { googleTagId } from "@/lib/analytics/google-tag";
 import {
   COOKIE_SETTINGS_EVENT,
   readAnalyticsConsent,
@@ -43,7 +43,7 @@ export function AnalyticsConsent() {
 
   return (
     <>
-      {consent === "granted" && <GoogleAnalytics gaId={gaMeasurementId} />}
+      {consent === "granted" && <GoogleAnalytics gaId={googleTagId} />}
 
       {showBanner && (
         <div
@@ -64,7 +64,7 @@ export function AnalyticsConsent() {
                 id="cookie-consent-description"
                 className="mt-2 text-sm leading-relaxed text-ink-secondary"
               >
-                This site uses Google Analytics to understand traffic and improve
+                This site uses a Google Tag to understand traffic and improve
                 the portfolio experience. Analytics cookies are only loaded if you
                 accept. Read the{" "}
                 <a href="/privacy" className="text-aurora-cyan hover:underline">
