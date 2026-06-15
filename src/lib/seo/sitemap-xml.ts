@@ -1,18 +1,39 @@
 import { absoluteUrl, siteConfig } from "@/lib/seo/site";
+import sitemapRoutes from "@/lib/seo/sitemap-routes.json";
 
-const routes = [
-  { path: "/", changefreq: "weekly", priority: "1.0" },
-  { path: "/amp", changefreq: "weekly", priority: "0.8" },
-  { path: "/amp/privacy", changefreq: "monthly", priority: "0.5" },
-  { path: "/privacy", changefreq: "monthly", priority: "0.6" },
-  { path: "/llms.txt", changefreq: "monthly", priority: "0.9" },
-  { path: "/llm.txt", changefreq: "monthly", priority: "0.8" },
-  { path: "/.well-known/security.txt", changefreq: "monthly", priority: "0.7" },
-] as const;
+type SitemapRoute = {
+  path: string;
+  changefreq: string;
+  priority: string;
+};
+
+function buildRoutes(): SitemapRoute[] {
+  const staticRoutes = sitemapRoutes.routes as SitemapRoute[];
+  const blogRoutes = sitemapRoutes.blogSlugs.map((slug) => ({
+    path: `/blog/${slug}`,
+    changefreq: "monthly",
+    priority: "0.75",
+  }));
+  const workRoutes = sitemapRoutes.workSlugs.map((slug) => ({
+    path: `/work/${slug}`,
+    changefreq: "monthly",
+    priority: "0.8",
+  }));
+
+  return [
+    staticRoutes[0],
+    staticRoutes[1],
+    staticRoutes[2],
+    ...blogRoutes,
+    ...workRoutes,
+    ...staticRoutes.slice(3),
+  ];
+}
 
 export function buildSitemapXml(lastModified = new Date()): string {
   const siteUrl = siteConfig.url.replace(/\/$/, "");
   const lastmod = lastModified.toISOString().split("T")[0];
+  const routes = buildRoutes();
 
   const urls = routes
     .map(
@@ -42,5 +63,4 @@ export function getSitemapResponse(lastModified = new Date()): Response {
   });
 }
 
-/** Used by scripts/generate-sitemap.mjs via duplicated routes — keep paths in sync. */
-export const sitemapPaths = routes.map((route) => absoluteUrl(route.path));
+export const sitemapPaths = buildRoutes().map((route) => absoluteUrl(route.path));

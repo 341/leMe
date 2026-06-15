@@ -1,0 +1,24 @@
+{
+  "blogSlugs": [
+    "agent-ready-portfolios",
+    "markdown-content-negotiation",
+    "event-driven-logistics",
+    "automating-developer-workflows"
+  ],
+  "workSlugs": ["expo-delivery", "angular-wc", "webrtc-secure"],
+  "routes": [
+    { "path": "/", "changefreq": "weekly", "priority": "1.0" },
+    { "path": "/blog", "changefreq": "weekly", "priority": "0.85" },
+    { "path": "/work", "changefreq": "monthly", "priority": "0.85" },
+    { "path": "/amp", "changefreq": "weekly", "priority": "0.8" },
+    { "path": "/amp/privacy", "changefreq": "monthly", "priority": "0.5" },
+    { "path": "/privacy", "changefreq": "monthly", "priority": "0.6" },
+    { "path": "/llms.txt", "changefreq": "monthly", "priority": "0.9" },
+    { "path": "/llm.txt", "changefreq": "monthly", "priority": "0.8" },
+    {
+      "path": "/.well-known/security.txt",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    }
+  ]
+}

@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.erollmaxhuni.com" }],
+        destination: "https://erollmaxhuni.com/:path*",
+        permanent: true,
+      },
+      {
         source: "/security.txt",
         destination: "/.well-known/security.txt",
         permanent: true,

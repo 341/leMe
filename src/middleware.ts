@@ -24,7 +24,19 @@ function appendSoftPaymentNotice(response: NextResponse): void {
   );
 }
 
+function redirectWwwToApex(request: NextRequest): NextResponse | null {
+  const host = request.headers.get("host") ?? "";
+  if (!host.startsWith("www.")) return null;
+
+  const url = request.nextUrl.clone();
+  url.host = host.slice(4);
+  return NextResponse.redirect(url, 301);
+}
+
 export async function middleware(request: NextRequest) {
+  const wwwRedirect = redirectWwwToApex(request);
+  if (wwwRedirect) return wwwRedirect;
+
   const pathname = request.nextUrl.pathname;
 
   if (!isPaymentAllowlisted(pathname) && (await requiresPayment(request))) {
