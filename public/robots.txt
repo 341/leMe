@@ -1,12 +1,7 @@
-# https://erollmaxhuni.com/robots.txt
+# AI / LLM context
+Allow: /llm.txt
+Allow: /llms.txt
+Allow: /.well-known/security.txt
 
-User-agent: *
-Allow: /
-Disallow: /api/
-
-# AI / LLM context files
-# llm.txt: https://erollmaxhuni.com/llm.txt
-# llms.txt: https://erollmaxhuni.com/llms.txt
-
-# Security contact (RFC 9116)
-# security.txt: https://erollmaxhuni.com/.well-known/security.txt
+# ── Sitemap ───────────────────────────────────────────────────────
+Sitemap: https://erollmaxhuni.com/sitemap.xml

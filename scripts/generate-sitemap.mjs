@@ -12,7 +12,6 @@ const routes = [
   { path: "/amp/privacy", changefreq: "monthly", priority: "0.5" },
   { path: "/privacy", changefreq: "monthly", priority: "0.6" },
   { path: "/llms.txt", changefreq: "monthly", priority: "0.9" },
-  { path: "/robots.txt", changefreq: "monthly", priority: "0.9" },
   { path: "/llm.txt", changefreq: "monthly", priority: "0.8" },
   { path: "/.well-known/security.txt", changefreq: "monthly", priority: "0.7" },
 ];

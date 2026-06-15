@@ -57,10 +57,6 @@ export const performanceHeaders = [
     ],
   },
   {
-    source: "/robots.txt",
-    headers: [{ key: "Cache-Control", value: cacheControl.hourly }],
-  },
-  {
     source: "/llm.txt",
     headers: [
       { key: "Content-Type", value: "text/plain; charset=utf-8" },

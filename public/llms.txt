@@ -21,5 +21,4 @@ Plain-language AI profile with full tech stack, case studies, and contact detail
 ## Optional
 
 - [Sitemap](https://erollmaxhuni.com/sitemap.xml): XML sitemap
-- [Robots](https://erollmaxhuni.com/robots.txt): Crawler directives
 - [Source code](https://github.com/341/leMe): Portfolio repository on GitHub
