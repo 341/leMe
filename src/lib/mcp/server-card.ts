@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { buildAuthMdDocument } from "@/lib/auth-md/document";
 import { buildApiCatalogLinkset, apiCatalogContentType } from "@/lib/seo/api-catalog";
 import { absoluteUrl, siteConfig } from "@/lib/seo/site";
 
@@ -156,10 +157,7 @@ export async function readMcpResource(
     case "portfolio://auth.md":
       return {
         mimeType: "text/markdown",
-        text: await readFile(
-          path.join(process.cwd(), "public/auth.md"),
-          "utf8",
-        ),
+        text: buildAuthMdDocument(),
       };
     case "portfolio://api-catalog":
       return {

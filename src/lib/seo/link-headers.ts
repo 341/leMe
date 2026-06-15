@@ -13,5 +13,6 @@ export function buildHomeLinkHeader(): string {
     `<${absoluteUrl("/llm.txt")}>; rel="service-desc"; type="text/plain"`,
     `<${absoluteUrl("/llms.txt")}>; rel="service-doc"; type="text/plain"`,
     `<${absoluteUrl("/llm.txt")}>; rel="describedby"; type="text/plain"`,
+    `</.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"`,
   ].join(", ");
 }

@@ -44,6 +44,14 @@ export const performanceHeaders = [
     headers: [
       { key: "Cache-Control", value: cacheControl.html },
       { key: "Link", value: buildHomeLinkHeader() },
+      { key: "Vary", value: "Accept" },
+    ],
+  },
+  {
+    source: "/privacy",
+    headers: [
+      { key: "Cache-Control", value: cacheControl.html },
+      { key: "Vary", value: "Accept" },
     ],
   },
   {
@@ -150,6 +158,20 @@ export const performanceHeaders = [
         value: "application/http-message-signatures-directory+json",
       },
       { key: "Cache-Control", value: cacheControl.hourly },
+    ],
+  },
+  {
+    source: "/.well-known/agent-skills/index.json",
+    headers: [
+      { key: "Content-Type", value: "application/json; charset=utf-8" },
+      { key: "Cache-Control", value: cacheControl.hourly },
+    ],
+  },
+  {
+    source: "/.well-known/agent-skills/:path*/SKILL.md",
+    headers: [
+      { key: "Content-Type", value: "text/markdown; charset=utf-8" },
+      { key: "Cache-Control", value: cacheControl.daily },
     ],
   },
 ] ;

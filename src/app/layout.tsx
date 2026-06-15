@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { WebMcpProvider } from "@/components/webmcp/WebMcpProvider";
 import { buildPersonJsonLd } from "@/lib/seo/json-ld";
 import { rootMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
@@ -62,6 +63,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
         <AnalyticsConsent />
+        <WebMcpProvider />
       </body>
     </html>
   );

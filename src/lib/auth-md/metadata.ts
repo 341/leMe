@@ -34,19 +34,11 @@ export function buildOAuthAuthorizationServerMetadata() {
       skill: absoluteUrl("/auth.md"),
       register_uri: absoluteUrl("/agent/auth"),
       claim_uri: absoluteUrl("/agent/auth/claim"),
-      revocation_uri: absoluteUrl("/agent/auth/revoke"),
       identity_types_supported: ["anonymous"],
       anonymous: {
         credential_types_supported: ["access_token"],
         claim_uri: absoluteUrl("/agent/auth/claim"),
       },
-      identity_assertion: {
-        assertion_types_supported: ["verified_email"],
-        credential_types_supported: ["access_token"],
-      },
-      events_supported: [
-        "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked",
-      ],
     },
   };
 }
