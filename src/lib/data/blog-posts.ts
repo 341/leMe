@@ -10,6 +10,57 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "coding-agents-need-dependency-management",
+    title: "Coding agents need dependency management now",
+    description:
+      "Recent releases from GitHub, Vercel, and OpenAI make one thing clear: the hard part is not prompting, it is controlling what the agent can find, run, and remember.",
+    publishedAt: "2026-06-22",
+    tags: ["agents", "developer-tools", "automation"],
+    readingMinutes: 5,
+    sections: [
+      {
+        paragraphs: [
+          "On June 17, GitHub shipped Agent Finder for Copilot. The pitch sounds small at first: describe a task, let Copilot search a registry of MCP servers, skills, canvases, agents, and tools, then pick what to load. But this is not a feature about convenience. It is GitHub admitting that the next bottleneck in agentic coding is not the model. It is resource management.",
+          "The same week, Vercel announced its Agent Stack and eve, an open-source, filesystem-first framework for durable backend agents. A day later, OpenAI released Codex CLI 0.141.0 with authenticated end-to-end encrypted Noise relay channels for remote executors, per-thread MCP activation from selected executor plugins, and fixes around hooks, sandboxing, and enterprise proxy TLS. Different products, same direction: agents are turning into runtime systems.",
+          "That matters if you are building real software and not demos. The question is shifting from \"Can an agent write code?\" to \"Can I trust the environment around the agent when it writes code, runs commands, pulls tools, and keeps state across a messy task?\"",
+        ],
+      },
+      {
+        heading: "Discovery is not a nice-to-have",
+        paragraphs: [
+          "Most teams still wire agent tools like a junk drawer. A repo gets an MCP server here, a custom script there, a project-specific instruction file, a Slack integration, a database read tool, and three half-documented one-off commands that only work on one laptop. Then somebody asks the agent to fix a production bug and wonders why it either misses the right tool or loads everything into context until the useful signal disappears.",
+          "GitHub's Agent Finder is interesting because it implements the open Agentic Resource Discovery specification, built with Google, GoDaddy, Hugging Face, and Microsoft. The practical detail is governance: Copilot searches a registry you choose, including private internal registries, and enterprise settings decide what can be discovered. It does not silently install tools. It ranks candidates and lets the developer decide what gets wired in.",
+          "That is the right primitive. Agents need the equivalent of package discovery, but with policy attached. You would not let a production service import random packages at runtime because a dependency name looked plausible. Agents need the same suspicion. A tool registry should answer: who owns this tool, what permissions does it need, what data can it read, what side effects can it trigger, and how do we revoke it?",
+        ],
+      },
+      {
+        heading: "The framework layer is hardening",
+        paragraphs: [
+          "Vercel's eve launch points at the other half of the problem. Their Agent Stack breaks the runtime into pieces developers already recognize: AI SDK for model calls, AI Gateway for routing and failover, Workflow SDK for durable execution, Sandbox for isolated compute, Connect for scoped short-lived access to external systems, and Chat SDK for delivery into surfaces like Slack, GitHub, Linear, WhatsApp, and Discord.",
+          "The useful part is the file shape. An eve agent lives under an agent directory: instructions in markdown, runtime config in TypeScript, tools in a tools folder, skills loaded on demand, subagents for narrower work, channels for where it listens, schedules for autonomous runs. That feels boring in the best way. The more agent systems behave like ordinary applications, the easier it becomes to review, version, test, and deploy them.",
+          "This is also where a lot of indie projects will get burned. A framework can give you durability, but it cannot decide your trust boundaries. If your agent can open GitHub issues, write to Notion, query Snowflake, and run shell commands, the important design work is not the prompt. It is permission scoping, audit trails, approval gates, and rollback paths. The product surface is the agent. The security surface is every tool behind it.",
+        ],
+      },
+      {
+        heading: "Terminal agents are becoming infrastructure",
+        paragraphs: [
+          "OpenAI's Codex CLI 0.141.0 release is a good example of boring details becoming strategically important. Authenticated encrypted relays for remote executors are not headline bait, but they are exactly the kind of plumbing you need when an agent leaves the local laptop and starts working inside cloud machines. Preserving native working directories and shells across app-server and exec-server boundaries sounds narrow until a cross-platform task fails because the agent reasoned against the wrong filesystem assumptions.",
+          "Per-thread MCP activation is another signal. A long-running agent should not expose every available capability to every thread. It should activate the tools needed for the current task, in the current context, with the current auth mode. That reduces prompt noise, lowers accidental side effects, and gives operators a smaller surface to inspect when something goes wrong.",
+          "The bug fixes tell the same story: hook trust bypass persistence, blocking PostToolUse hooks, Windows sandbox credential repair, enterprise TLS compatibility, and a bundled SQLite pin for a WAL-reset corruption fix. This is not the romantic part of AI. It is what happens when coding agents become part of the delivery path and inherit every old problem from CI, remote dev environments, package managers, and build farms.",
+        ],
+      },
+      {
+        heading: "What I would change in a real repo",
+        paragraphs: [
+          "First, I would stop treating agent instructions as a dumping ground. Put stable project rules in one reviewed file. Put task-specific context in issues or run prompts. Put large procedures into skills that load only when relevant. If a rule cannot be tested or observed, ask whether it belongs in the agent's always-on context.",
+          "Second, I would inventory tools like dependencies. For each MCP server, script, workflow, or API capability, record the owner, permissions, data access, install path, and failure mode. If the agent can mutate production data, the tool needs an approval gate or a constrained dry-run mode. If the tool reads secrets, the agent should receive scoped credentials, not raw long-lived tokens.",
+          "Third, I would make agent runs reviewable. Save the prompt, discovered tools, selected tools, commands, diffs, test output, and final reasoning. Not because every run deserves ceremony, but because debugging an agent without a trail feels like debugging a flaky deployment with only a screenshot.",
+          "The June news is not saying every developer needs another agent framework this week. It is saying the casual phase is ending. Agents are no longer just smarter autocomplete. They are processes with dependency discovery, runtime isolation, auth, observability, and state. Builders who model them that way will ship useful automations. Builders who keep pasting giant prompts into a privileged shell will eventually learn the same lesson through an incident report.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "agent-ready-portfolios",
     title: "Making a Developer Portfolio Agent-Ready",
     description:
