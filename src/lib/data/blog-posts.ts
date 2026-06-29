@@ -10,6 +10,57 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "agents-need-discovery-not-more-context",
+    title: "Agents need discovery, not bigger prompts",
+    description:
+      "ARD, GitHub Agent Finder, and Cursor Origin point to the next developer bottleneck: tool wiring you can govern.",
+    publishedAt: "2026-06-29",
+    tags: ["agents", "tooling", "github", "cursor"],
+    readingMinutes: 7,
+    sections: [
+      {
+        paragraphs: [
+          "The interesting AI coding news this month is not that another model got better at editing files. That is background radiation now. The useful shift is that agent tooling is admitting what builders already feel: an agent is only as good as the tools it can safely find, understand, and use.",
+          "On June 17, GitHub shipped Agent Finder for Copilot. The pitch is simple: describe a task in plain language, search a registry of AI resources, and let Copilot return ranked MCP servers, skills, tools, canvases, and agents that match the work. It does not silently install them. It points at a public catalog or a private registry, respects managed settings, and leaves the final wiring decision with the developer or organization.",
+          "Microsoft announced the underlying Agentic Resource Discovery specification at the same time, with collaborators including GitHub, Google, GoDaddy, Hugging Face, Nvidia, Salesforce, ServiceNow, and Snowflake. ARD gives agentic resources a discovery surface: what the resource does, who provides it, how it is invoked, what authority it needs, and whether it fits a policy environment. A few days later, The Decoder reported Cursor's Origin, a Git platform designed for humans and agents, with internal load tests simulating thousands of agents reading and writing one repository. Cursor also previewed mobile agent control and its first fully self-trained model.",
+        ],
+      },
+      {
+        heading: "The old workflow is already cracking",
+        paragraphs: [
+          "If you use agents seriously, you know the current setup tax. You paste instructions. You maintain MCP config. You explain where the staging logs live. You add another tool, then wonder why every session starts with a bloated context preamble. None of that is wasted work, but it is fragile work. It depends on each client remembering exactly what you remembered to wire in.",
+          "That model does not scale to a team, and it barely scales to one indie developer with multiple projects. I might need a Prisma migration skill for one issue, a Stripe webhook verifier for another, and a browser performance auditor for a third. Preloading all of them is noisy. Manually discovering them each time is slow. Hard-coding them into one vendor's client makes the toolchain sticky in the wrong place.",
+          "ARD is interesting because it moves discovery out of folklore and into infrastructure. The agent can ask, 'What capability helps with this task?' The registry can answer with structured metadata. The organization can decide which catalogs are trusted. That is boring in the best way. The breakthrough is not magic autonomy; it is turning tool availability into something indexable, governable, and reviewable.",
+        ],
+      },
+      {
+        heading: "What this means for a real codebase",
+        paragraphs: [
+          "For builders, the practical move is to stop treating agent instructions as a giant README and start treating capabilities as product surfaces. If your project has an internal deployment script, document it like a resource. If your app exposes diagnostic endpoints, describe what they do and who may call them.",
+          "This does not mean every repo needs a full public tool catalog next week. It means the direction is clear: agents will prefer resources with structured descriptions, explicit inputs, narrow scopes, and clean invocation paths. The same way good APIs beat tribal knowledge, good agent resources will beat 'ask Eki how deploys work.' A local script with predictable flags and a short manifest is more useful than a heroic paragraph in CONTRIBUTING.md.",
+          "The security angle matters too. GitHub's Agent Finder note explicitly says there is no automatic installation. That detail is not cosmetic. The moment agents can discover tools dynamically, the governance question becomes the product. Which registries are allowed? Which MCP servers can touch production data? Which actions require human review? Which tools are visible to contractors, CI agents, or personal accounts? Discovery without policy is just a faster path to a bad incident.",
+        ],
+      },
+      {
+        heading: "The repository becomes the runtime",
+        paragraphs: [
+          "Cursor's Origin announcement points at the other half of the problem. Once agents can find the right tools, they still need somewhere sane to work. Normal Git workflows were designed around humans creating branches, reviewing diffs, and occasionally resolving conflicts, not agents fixing CI and rebasing at machine speed.",
+          "You do not need Cursor Origin specifically to feel this pressure. Any team running concurrent coding agents will hit it. CI queues become the bottleneck. Test flakiness turns into agent churn. Merge conflicts stop being rare interruptions and become scheduler events. Review comments need enough structure for an agent to act without guessing. The repository starts behaving less like a folder of source code and more like an execution environment.",
+          "That should change how you design projects. Keep modules small. Make tests deterministic. Prefer generators over hand-updated duplicated metadata. Put validation close to the change. Use typed config. Add idempotency to scripts. Avoid hidden local state. These were already good engineering habits, but agent-heavy workflows punish violations faster because machines will explore every ambiguous path you left open.",
+        ],
+      },
+      {
+        heading: "My checklist after this news",
+        paragraphs: [
+          "First, I would audit which project tasks still live only in my head: deploy checks, database read-only inspection, sitemap generation, payment verification, screenshot review, and incident triage. Each one should become either a script, a documented endpoint, or a small tool with explicit inputs.",
+          "Second, I would separate discovery from permission. It is fine for an agent to learn that a production log tool exists. It is not fine for every agent to read production logs. The registry answers 'what can help?' The auth layer answers 'are you allowed?' Mixing those two creates either overexposure or unusable automation.",
+          "Third, I would budget context like money. If a tool is only relevant for one task, it should be pulled in when needed, not carried forever. Agent Finder and ARD treat context as an operational resource.",
+          "The headline for developers is simple: the agent era is becoming less about prompting and more about systems design. Better models will keep arriving. The compounding advantage will go to teams whose tools are discoverable, whose permissions are boring, and whose repositories can absorb autonomous work without turning every merge into archaeology.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "agent-ready-portfolios",
     title: "Making a Developer Portfolio Agent-Ready",
     description:
